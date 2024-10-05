@@ -1,79 +1,60 @@
-"use client";
-import React, { useEffect, useState } from "react";
 import HomeBento from "../../components/navigation/homeBento/HomeBento";
 import { collectPlaylistItems, collectPlaylists } from "./youtube";
 import playlists from "../../utils/playlists";
 
+export default async function Home() {
 
-export default function Home() {
-
-  // const [playlists, setPlaylists] = useState([]);
-  const [playlistItems, setPlaylistItems] = useState([])
-
-  useEffect(() => {
-    //console.log('This use effect is working')
-    const fetchAlbums = async () => {
-     // console.log('fetchAlbums is working')
-      try {
-        const data = await Promise.all(playlists.map(async(playlist) => {
-            return await collectPlaylistItems(playlist.id)
-          }))
-          setPlaylistItems(data)
-        }
-      catch(error) {
-        console.log(error)
-      }
-    }
-    fetchAlbums()
-    
-  }, [])
-
-  console.log(playlistItems)
-
-  const mappedPlaylists = playlistItems.map((item) => {
-
-    return {
-      playlistId: item.snippet.playlistId,
-    videoId: item.snippet.resourceId.videoId,
-    embedUrl: `https://www.youtube.com/watch?v=${videoId}`
-
-    }
-  })
-
+  async function getPlaylistAndVideos() {
+    try {
+      const data = await collectPlaylists();
+      console.log("All fetched playlists:", data);
   
+      const filteredPlaylists = await Promise.all(
+        data
+          .filter((playlist) =>
+            playlist.snippet.title.includes("PBC GLOBAL Series")
+          )
+          .map(async (playlist) => {
+            const items = await collectPlaylistItems(playlist.id);
+            return {
+              title: playlist.snippet.title,
+              id: playlist.id,
+              thumbnails: playlist.snippet.thumbnails,
+              itemCount: playlist.contentDetails.itemCount,
+              videos: items.map(item => ({
+                id: item.snippet.resourceId.videoId,
+                title: item.snippet.title,
+                thumbnails: item.snippet.thumbnails
+              }))
+            };
+          })
+      );
+  
+      console.log("Filtered PBC GLOBAL Series playlists with video IDs:", filteredPlaylists);
+  
+      return filteredPlaylists
+    
+  
+    } catch (error) {
+      console.error("Error fetching playlists:", error);
+      return 
+        []
+      
+    }
+  }
 
-  // useEffect(() => {
-  //   const fetchPlaylists = async () => {
-  //     try {
-  //       const data = await collectPlaylists();
-  //       console.log("All fetched playlists:", data);
+  const playlists = await getPlaylistAndVideos()
 
-  //       const filteredPlaylists = data
-  //         .filter((playlist) =>
-  //           playlist.snippet.title.includes("PBC GLOBAL Series")
-  //         )
-  //         .map((playlist) => ({            
-  //             title: playlist.snippet.title,
-  //             id: playlist.id,
-  //             thumbnails: playlist.snippet.thumbnails,
-  //             itemCount: playlist.contentDetails.itemCount,
-            
-  //         }));
-  //       console.log("Filtered PBC GLOBAL Series playlists:", filteredPlaylists);
-  //       setPlaylists(filteredPlaylists);
-  //     } catch (error) {
-  //       console.error("Error fetching playlists:", error);
-  //     }
-  //   };
-
-  //   fetchPlaylists();
-  // }, []);
-
-  // console.log("Current playlists state:", playlists);
+ 
+  await console.log(playlists)
 
   return (
     <>
-      <HomeBento playlistItems={playlistItems} />
+      <HomeBento playlists={playlists} />
     </>
   );
 }
+
+export const revalidate = 604800;
+
+

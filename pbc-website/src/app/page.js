@@ -46,7 +46,7 @@ export default async function Home() {
   const playlists = await getPlaylistAndVideos()
 
  
-  await console.log(playlists)
+ // await console.log(playlists)
 
   return (
     <>

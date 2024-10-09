@@ -1,9 +1,12 @@
 import HomeBento from "../../components/navigation/homeBento/HomeBento";
 import { collectPlaylistItems, collectPlaylists } from "./youtube";
 import playlists from "../../utils/playlists";
+import { PlaylistsContext } from "../../utils/context";
+
+
 
 export default async function Home() {
-
+  
   async function getPlaylistAndVideos() {
     try {
       const data = await collectPlaylists();
@@ -43,14 +46,14 @@ export default async function Home() {
     }
   }
 
-  const playlists = await getPlaylistAndVideos()
-
  
+ const loadedPlaylists = await getPlaylistAndVideos()
  // await console.log(playlists)
 
   return (
     <>
-      <HomeBento playlists={playlists} />
+      <HomeBento loadedPlaylists={loadedPlaylists} />
+
     </>
   );
 }

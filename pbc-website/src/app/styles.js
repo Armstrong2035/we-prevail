@@ -1,3 +1,5 @@
+
+
 const colors = {
   primaryBackground: "#F1FAEE",
   secondaryBackground: "#457b9d",
@@ -25,19 +27,64 @@ const textStyles = {
     fontFamily: '"DM Sans", sans-serif',
     fontStyle: "normal",
     fontWeight: 700,
-    color: "rgb(255, 255, 255)",
-    fontSize: "32px",
+    color: "rgb(0 0 0)",
+    fontSize: "30px",
     lineHeight: "38px",
   },
+
   secondaryBody: {
-    fontFamily:
-      'Mulish, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+    fontFamily: '"DM Sans", sans-serif',
     fontStyle: "normal",
-    fontWeight: 500,
-    color: "rgb(0, 0, 0)",
-    fontSize: "16px",
-    lineHeight: "24px",
+    fontWeight: 700,
+    color: "rgb(0 0 0)",
+    fontSize: "24px",
+    lineHeight: "30px",
   },
+  tertiaryBody: {
+    fontFamily: '"DM Sans", sans-serif',
+    fontStyle: "normal",
+    fontWeight: 400,
+    color: "rgb(118, 123, 136)",
+    fontSize: "18px",
+    lineHeight: "27px",
+
+  },
+
+  sermons: {
+    title: {
+      family: 'Mulish',
+      style: 'normal',
+      weight: 800,
+      color: 'rgb(0, 0, 0)',
+      size: '16px',
+      lineHeight: '24px',
+    },
+   body: {
+      family: 'Mulish Montserrat sans-serif',
+      style: 'normal',
+      weight: 800,
+      color: 'rgb(107, 107, 112)',
+      size: '12px',
+      lineHeight: '18px'
+    },
+  heading: {
+      family: 'Mulish Montserrat sans-serif',
+      style: 'normal',
+      weight: 800,
+      color: 'rgb(0, 0, 0)',
+      size: '20px',
+      lineHeight: '24px',
+    }
+}
+  // secondaryBody: {
+  //   fontFamily:
+  //     'Mulish, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+  //   fontStyle: "normal",
+  //   fontWeight: 500,
+  //   color: "rgb(0, 0, 0)",
+  //   fontSize: "16px",
+  //   lineHeight: "24px",
+  // },
 };
 
 const buttonStyles = {
@@ -46,7 +93,7 @@ const buttonStyles = {
     color: "#F1FAEE",
     fontFamily: "Poppins, Lato, Helvetica, sans-serif",
     fontWeight: 600,
-    fontSize: "15px",
+    fontSize: "10px",
     padding: "10px 20px",
     borderRadius: "5px",
     cursor: "pointer",
@@ -56,6 +103,16 @@ const buttonStyles = {
       borderColor: "#A63A3A",
     },
   },
+  textButton: {
+    justifyContent: 'flex-start',
+      '&:hover': {
+            backgroundColor: "rgba(0, 0, 0, 0.1)",
+        },
+        '&.MuiButton-text:hover': {
+            backgroundColor: "rgba(0, 0, 0, 0.1)",
+        },
+        color: 'black'
+  }
 };
 
 export { colors, textStyles, buttonStyles };

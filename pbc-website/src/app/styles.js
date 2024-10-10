@@ -12,6 +12,11 @@ const textStyles = {
     color: "rgb(255, 255, 255)",
     fontSize: "32px",
     lineHeight: "40px",
+    "@media (max-width: 600px)": {
+      // For mobile devices
+      fontSize: "24px",
+      lineHeight: "32px",
+    },
   },
   cardBody: {
     fontFamily: "neue-haas-grotesk-display",
@@ -20,6 +25,10 @@ const textStyles = {
     color: "rgb(255, 255, 255)",
     fontSize: "14px",
     lineHeight: "21px",
+    "@media (max-width: 600px)": {
+      fontSize: "12px",
+      lineHeight: "18px",
+    },
   },
   secondaryHeading: {
     fontFamily: '"DM Sans", sans-serif',
@@ -28,8 +37,11 @@ const textStyles = {
     color: "rgb(0 0 0)",
     fontSize: "30px",
     lineHeight: "38px",
+    "@media (max-width: 600px)": {
+      fontSize: "26px",
+      lineHeight: "34px",
+    },
   },
-
   secondaryBody: {
     fontFamily: '"DM Sans", sans-serif',
     fontStyle: "normal",
@@ -37,6 +49,10 @@ const textStyles = {
     color: "rgb(0 0 0)",
     fontSize: "24px",
     lineHeight: "30px",
+    "@media (max-width: 600px)": {
+      fontSize: "20px",
+      lineHeight: "26px",
+    },
   },
   tertiaryBody: {
     fontFamily: '"DM Sans", sans-serif',
@@ -45,6 +61,10 @@ const textStyles = {
     color: "rgb(118, 123, 136)",
     fontSize: "18px",
     lineHeight: "27px",
+    "@media (max-width: 600px)": {
+      fontSize: "16px",
+      lineHeight: "24px",
+    },
   },
 
   sermons: {
@@ -55,6 +75,10 @@ const textStyles = {
       color: "rgb(0, 0, 0)",
       size: "16px",
       lineHeight: "24px",
+      "@media (max-width: 600px)": {
+        size: "14px",
+        lineHeight: "20px",
+      },
     },
     body: {
       family: "Mulish Montserrat sans-serif",
@@ -63,6 +87,10 @@ const textStyles = {
       color: "rgb(107, 107, 112)",
       size: "12px",
       lineHeight: "18px",
+      "@media (max-width: 600px)": {
+        size: "10px",
+        lineHeight: "16px",
+      },
     },
     heading: {
       family: "Mulish Montserrat sans-serif",
@@ -71,6 +99,10 @@ const textStyles = {
       color: "rgb(0, 0, 0)",
       size: "20px",
       lineHeight: "24px",
+      "@media (max-width: 600px)": {
+        size: "18px",
+        lineHeight: "22px",
+      },
     },
   },
   tertiaryHeading: {
@@ -81,6 +113,10 @@ const textStyles = {
     color: "rgb(0, 0, 0)",
     fontSize: "16px",
     lineHeight: "24px",
+    "@media (max-width: 600px)": {
+      fontSize: "14px",
+      lineHeight: "20px",
+    },
   },
 };
 

@@ -1,6 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 export default function Information({ playlist, textStyles }) {
-  console.log(playlist);
+  //console.log(playlist);
 
   return (
     <Stack>

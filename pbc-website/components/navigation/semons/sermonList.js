@@ -17,16 +17,17 @@ import Information from "./information";
 import Controls from "./controls";
 import { textStyles } from "@/app/styles";
 import LgAppBar from "../LgAppBar";
+import Link from "next/link";
 
 export default function SermonList() {
   const playlists = localStorage.getItem("loadedPlaylists");
   const loadedPlaylists = JSON.parse(playlists);
-  console.log(loadedPlaylists);
+  //console.log(loadedPlaylists);
 
   let latestSermon =
     loadedPlaylists[0].videos[loadedPlaylists[0].videos.length - 1];
 
-  console.log(latestSermon);
+  //console.log(latestSermon);
 
   const buttons = false;
 
@@ -42,24 +43,32 @@ export default function SermonList() {
               <Grid2 item size={{ lg: 3, md: 4, sm: 6 }} key={playlist.id}>
                 {" "}
                 {/* {{ edit_2: Added key prop for list items }} */}
-                <Card>
-                  <CardContent>
-                    <Box>
-                      <Image
-                        src={
-                          playlist.videos[playlist.videos.length - 1].thumbnails
-                            .maxres.url
-                        }
-                        alt={playlist.title}
-                        layout="responsive"
-                        width={500}
-                        height={300}
+                <Link
+                  href={`/sermons/${playlist.title.toLowerCase()}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <Card>
+                    <CardContent>
+                      <Box>
+                        <Image
+                          src={
+                            playlist.videos[playlist.videos.length - 1]
+                              .thumbnails.maxres.url
+                          }
+                          alt={playlist.title}
+                          layout="responsive"
+                          width={500}
+                          height={300}
+                        />
+                      </Box>
+                      {/* <Controls playlist={playlist} /> */}
+                      <Information
+                        playlist={playlist}
+                        textStyles={textStyles}
                       />
-                    </Box>
-                    {/* <Controls playlist={playlist} /> */}
-                    <Information playlist={playlist} textStyles={textStyles} />
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </Link>
               </Grid2>
             ))}
           </Grid2>

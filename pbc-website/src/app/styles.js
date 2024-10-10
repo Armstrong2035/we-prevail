@@ -1,5 +1,3 @@
-
-
 const colors = {
   primaryBackground: "#F1FAEE",
   secondaryBackground: "#457b9d",
@@ -47,44 +45,43 @@ const textStyles = {
     color: "rgb(118, 123, 136)",
     fontSize: "18px",
     lineHeight: "27px",
-
   },
 
   sermons: {
     title: {
-      family: 'Mulish',
-      style: 'normal',
+      family: "Mulish",
+      style: "normal",
       weight: 800,
-      color: 'rgb(0, 0, 0)',
-      size: '16px',
-      lineHeight: '24px',
+      color: "rgb(0, 0, 0)",
+      size: "16px",
+      lineHeight: "24px",
     },
-   body: {
-      family: 'Mulish Montserrat sans-serif',
-      style: 'normal',
+    body: {
+      family: "Mulish Montserrat sans-serif",
+      style: "normal",
       weight: 800,
-      color: 'rgb(107, 107, 112)',
-      size: '12px',
-      lineHeight: '18px'
+      color: "rgb(107, 107, 112)",
+      size: "12px",
+      lineHeight: "18px",
     },
-  heading: {
-      family: 'Mulish Montserrat sans-serif',
-      style: 'normal',
+    heading: {
+      family: "Mulish Montserrat sans-serif",
+      style: "normal",
       weight: 800,
-      color: 'rgb(0, 0, 0)',
-      size: '20px',
-      lineHeight: '24px',
-    }
-}
-  // secondaryBody: {
-  //   fontFamily:
-  //     'Mulish, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-  //   fontStyle: "normal",
-  //   fontWeight: 500,
-  //   color: "rgb(0, 0, 0)",
-  //   fontSize: "16px",
-  //   lineHeight: "24px",
-  // },
+      color: "rgb(0, 0, 0)",
+      size: "20px",
+      lineHeight: "24px",
+    },
+  },
+  tertiaryHeading: {
+    fontFamily:
+      'Mulish, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+    fontStyle: "normal",
+    fontWeight: 500,
+    color: "rgb(0, 0, 0)",
+    fontSize: "16px",
+    lineHeight: "24px",
+  },
 };
 
 const buttonStyles = {
@@ -104,15 +101,15 @@ const buttonStyles = {
     },
   },
   textButton: {
-    justifyContent: 'flex-start',
-      '&:hover': {
-            backgroundColor: "rgba(0, 0, 0, 0.1)",
-        },
-        '&.MuiButton-text:hover': {
-            backgroundColor: "rgba(0, 0, 0, 0.1)",
-        },
-        color: 'black'
-  }
+    justifyContent: "flex-start",
+    "&:hover": {
+      backgroundColor: "rgba(0, 0, 0, 0.1)",
+    },
+    "&.MuiButton-text:hover": {
+      backgroundColor: "rgba(0, 0, 0, 0.1)",
+    },
+    color: "black",
+  },
 };
 
 export { colors, textStyles, buttonStyles };

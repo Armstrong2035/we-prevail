@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Mulish";
+  src: url("../../public/fonts/Mulish-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900; /* Defines the range of weights */
+  font-style: normal; /* Normal style for the regular font */
+}
+
+@font-face {
+  font-family: "Mulish";
+  src: url("../../public/fonts/Mulish-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900; /* Defines the range of weights */
+  font-style: italic; /* Italic style for the italic font */
+}
+
+@font-face {
+  font-family: "DMSans";
+  src: url("../../public/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DMSans";
+  src: url("../../public/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}

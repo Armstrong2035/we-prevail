@@ -3,15 +3,12 @@ import { collectPlaylistItems, collectPlaylists } from "./youtube";
 import playlists from "../../utils/playlists";
 import { PlaylistsContext } from "../../utils/context";
 
-
-
 export default async function Home() {
-  
   async function getPlaylistAndVideos() {
     try {
       const data = await collectPlaylists();
       console.log("All fetched playlists:", data);
-  
+
       const filteredPlaylists = await Promise.all(
         data
           .filter((playlist) =>
@@ -24,40 +21,36 @@ export default async function Home() {
               id: playlist.id,
               thumbnails: playlist.snippet.thumbnails,
               itemCount: playlist.contentDetails.itemCount,
-              videos: items.map(item => ({
+              videos: items.map((item) => ({
                 id: item.snippet.resourceId.videoId,
                 title: item.snippet.title,
-                thumbnails: item.snippet.thumbnails
-              }))
+                thumbnails: item.snippet.thumbnails,
+              })),
             };
           })
       );
-  
-      console.log("Filtered PBC GLOBAL Series playlists with video IDs:", filteredPlaylists);
-  
-      return filteredPlaylists
-    
-  
+
+      console.log(
+        "Filtered PBC GLOBAL Series playlists with video IDs:",
+        filteredPlaylists
+      );
+
+      return filteredPlaylists;
     } catch (error) {
       console.error("Error fetching playlists:", error);
-      return 
-        []
-      
+      return;
+      [];
     }
   }
 
- 
- const loadedPlaylists = await getPlaylistAndVideos()
- // await console.log(playlists)
+  const loadedPlaylists = await getPlaylistAndVideos();
+  // await console.log(playlists)
 
   return (
     <>
       <HomeBento loadedPlaylists={loadedPlaylists} />
-
     </>
   );
 }
 
 export const revalidate = 604800;
-
-

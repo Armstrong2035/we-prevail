@@ -3,12 +3,9 @@ import { Container } from "@mui/material";
 import React, { useEffect } from "react";
 import LgAppBar from "../LgAppBar";
 import Announcement from "./Announcement";
-import LatestSermon from "./LatestSermon";
 import BentoBody from "./bentoBody/BentoBody";
 import { useStore } from "../../../utils/store";
-import useTheme from "@mui/material";
-import useMediaQuery from "@mui/material";
-import SmAppBar from "../SmAppBar";
+import LatestSermon from "./bentoBody/latestSermon/LatestSermon";
 
 export default function HomeBento({ loadedPlaylists }) {
   // const theme = useTheme();

@@ -10,14 +10,14 @@ export default function Announcement() {
   return (
     <Paper
       sx={{
-        padding: "40px 20px",
-        backgroundColor: colors.secondaryBackground,
+        padding: "20px 20px",
+        backgroundColor: "#324A5F",
         mb: 2,
       }}
     >
       <Grid2
         container
-        spacing={5}
+        spacing={3}
         alignItems={"center"}
         justifyContent={"center"}
       >

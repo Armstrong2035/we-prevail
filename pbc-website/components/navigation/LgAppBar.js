@@ -29,7 +29,7 @@ export default function LgAppBar() {
             direction={"row"}
             spacing={3}
             alignItems={"center"}
-            justifyContent={"space-between"}
+            justifyContent={"space-around"}
             sx={{ width: "100%" }}
           >
             <Link href="/" passHref>

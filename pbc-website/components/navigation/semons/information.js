@@ -1,5 +1,6 @@
 import { Stack, Typography } from "@mui/material";
-export default function Information({ playlist, textStyles }) {
+import { textStyles } from "@/app/styles";
+export default function Information({ playlist }) {
   //console.log(playlist);
 
   return (

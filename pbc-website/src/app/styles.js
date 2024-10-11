@@ -69,38 +69,41 @@ const textStyles = {
 
   sermons: {
     title: {
-      family: "Mulish",
-      style: "normal",
-      weight: 800,
+      fontFamily:
+        'Mulish, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+      fontStyle: "normal",
+      fontWeight: 800,
       color: "rgb(0, 0, 0)",
-      size: "16px",
+      fontSize: "16px",
       lineHeight: "24px",
       "@media (max-width: 600px)": {
-        size: "14px",
+        fontSize: "14px",
         lineHeight: "20px",
       },
     },
     body: {
-      family: "Mulish Montserrat sans-serif",
-      style: "normal",
-      weight: 800,
+      fontFamily:
+        'Mulish, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+      fontStyle: "normal",
+      fontWeight: 800,
       color: "rgb(107, 107, 112)",
-      size: "12px",
+      fontSize: "12px",
       lineHeight: "18px",
       "@media (max-width: 600px)": {
-        size: "10px",
+        fontSize: "10px",
         lineHeight: "16px",
       },
     },
     heading: {
-      family: "Mulish Montserrat sans-serif",
-      style: "normal",
-      weight: 800,
+      fontFamily:
+        'Mulish, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+      fontStyle: "normal",
+      fontWeight: 800,
       color: "rgb(0, 0, 0)",
-      size: "20px",
+      fontSize: "20px",
       lineHeight: "24px",
       "@media (max-width: 600px)": {
-        size: "18px",
+        fontSize: "18px",
         lineHeight: "22px",
       },
     },

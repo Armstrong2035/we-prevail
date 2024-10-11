@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 
 import Image from "next/image";
-import LatestSermon from "../homeBento/LatestSermon";
+import LatestSermon from "../homeBento/bentoBody/latestSermon/LatestSermon";
 import Information from "./information";
 import Controls from "./controls";
 import { textStyles } from "@/app/styles";
@@ -37,8 +37,14 @@ export default function SermonList() {
 
       <Container>
         <Stack spacing={5}>
-          <LatestSermon loadedPlaylists={loadedPlaylists} buttons={buttons} />
-          <Grid2 container direction={"row"} spacing={3} sx={{ width: "100%" }}>
+          {/* <LatestSermon loadedPlaylists={loadedPlaylists} buttons={buttons} /> */}
+          <Grid2
+            container
+            direction={"row"}
+            spacing={3}
+            sx={{ width: "100%" }}
+            justifyContent={"center"}
+          >
             {loadedPlaylists.map((playlist) => (
               <Grid2 item size={{ lg: 3, md: 4, sm: 6 }} key={playlist.id}>
                 {" "}
@@ -62,10 +68,7 @@ export default function SermonList() {
                         />
                       </Box>
                       {/* <Controls playlist={playlist} /> */}
-                      <Information
-                        playlist={playlist}
-                        textStyles={textStyles}
-                      />
+                      <Information playlist={playlist} />
                     </CardContent>
                   </Card>
                 </Link>

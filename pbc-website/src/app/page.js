@@ -47,9 +47,9 @@ export default async function Home() {
   // await console.log(playlists)
 
   return (
-    <>
+    <div style={{}}>
       <HomeBento loadedPlaylists={loadedPlaylists} />
-    </>
+    </div>
   );
 }
 

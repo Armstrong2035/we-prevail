@@ -7,7 +7,7 @@ export default function WatchSermon({ sermonData }) {
 
   return (
     <Stack spacing={4}>
-      <Box sx={{ height: "calc(100vh - 64px)" }}>
+      <Box sx={{ height: { sm: "50vh", lg: "80vh" } }}>
         <iframe
           width="100%"
           height="100%"

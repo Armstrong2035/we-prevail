@@ -13,7 +13,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import Link from "next/link";
 
 export default function LgAppBar() {
-  const navItems = ["Sermons", "Expressions", "About us", "Online", "Giving"];
+  const navItems = ["Sermons", "About", "Online", "Giving"];
 
   // const theme = useTheme();
   // const isDesktop = useMediaQuery(theme.breakpoints.up("lg"));
@@ -34,7 +34,6 @@ export default function LgAppBar() {
           >
             <Link href="/" passHref>
               <Box
-                component="a"
                 sx={{
                   color: "inherit",
                   display: "flex",

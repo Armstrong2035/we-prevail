@@ -27,8 +27,12 @@ export default function Sermon({ slug }) {
     }
   }, [slug]);
 
+  //#F9F7D9
+  //#324A5F
+  //#DFF5D0
+
   return (
-    <>
+    <div style={{ backgroundColor: "#DFF5D0" }}>
       <LgAppBar />
       <Container>
         {sermonData ? (
@@ -37,6 +41,6 @@ export default function Sermon({ slug }) {
           <Typography variant="h5">Sermon not found</Typography>
         )}
       </Container>
-    </>
+    </div>
   );
 }

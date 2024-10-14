@@ -30,9 +30,12 @@ export default function SermonList() {
   //console.log(latestSermon);
 
   const buttons = false;
+  //#F9F7D9
+  //#324A5F
+  //#DFF5D0
 
   return (
-    <>
+    <div style={{ backgroundColor: "#DFF5D0" }}>
       <LgAppBar />
 
       <Container>
@@ -53,7 +56,7 @@ export default function SermonList() {
                   href={`/sermons/${playlist.title.toLowerCase()}`}
                   style={{ textDecoration: "none" }}
                 >
-                  <Card>
+                  <Card sx={{ backgroundColor: "#324A5F" }}>
                     <CardContent>
                       <Box>
                         <Image
@@ -77,6 +80,6 @@ export default function SermonList() {
           </Grid2>
         </Stack>
       </Container>
-    </>
+    </div>
   );
 }

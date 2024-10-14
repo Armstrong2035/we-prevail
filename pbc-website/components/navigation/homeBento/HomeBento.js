@@ -23,7 +23,7 @@ export default function HomeBento({ loadedPlaylists }) {
   // console.log(playlists)
 
   return (
-    <>
+    <div style={{ backgroundColor: "" }}>
       {/* {desktop ? <LgAppBar /> : <SmAppBar />} */}
 
       <LgAppBar />
@@ -32,6 +32,6 @@ export default function HomeBento({ loadedPlaylists }) {
         <LatestSermon loadedPlaylists={loadedPlaylists} buttons={buttons} />
         <BentoBody />
       </Container>
-    </>
+    </div>
   );
 }

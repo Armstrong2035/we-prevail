@@ -1,3 +1,4 @@
+import { textStyles } from "@/app/styles";
 import { Box, Typography, Stack, Card, CardContent } from "@mui/material";
 import Image from "next/image";
 
@@ -12,7 +13,7 @@ export default function MoreInThisSeries({ sermonData, setHeadlineSermon }) {
 
   return (
     <Box sx={{ mt: 4 }}>
-      <Typography variant="h5" gutterBottom>
+      <Typography gutterBottom sx={textStyles.sermons.heading}>
         More sermons in this series
       </Typography>
       <Stack direction="row" spacing={2} sx={{ overflowX: "auto", pb: 2 }}>
@@ -30,9 +31,9 @@ export default function MoreInThisSeries({ sermonData, setHeadlineSermon }) {
               layout="responsive"
             />
             <CardContent>
-              <Typography variant="subtitle2" noWrap>
-                {`Part ${index + 1}`}
-              </Typography>
+              <Typography noWrap sx={textStyles.sermons.body}>{`Part ${
+                index + 1
+              }`}</Typography>
             </CardContent>
           </Card>
         ))}

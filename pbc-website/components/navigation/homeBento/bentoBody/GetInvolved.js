@@ -17,14 +17,18 @@ export default function GetInvolved() {
   ];
 
   return (
-    <Card sx={{ backgroundColor: "#324A5F" }}>
+    <Card sx={{ backgroundColor: "#324A5F", width: "100%" }}>
       <CardHeader
         title={
           <div>
-            <Typography sx={textStyles.secondaryHeading}>
+            <Typography
+              sx={{ ...textStyles.secondaryHeading, color: "#DFF8F5" }}
+            >
               Get Involved
             </Typography>
-            <Typography>See what God can do through you</Typography>
+            <Typography sx={{ color: "#E1E5EA" }}>
+              See what God can do through you
+            </Typography>
           </div>
         }
       />
@@ -35,7 +39,7 @@ export default function GetInvolved() {
             size={"large"}
             variant={"text"}
             fullWidth
-            sx={buttonStyles.textButton}
+            sx={{ ...buttonStyles.textButton, color: "#E1E5EA" }}
           >
             {i}
           </Button>

@@ -5,10 +5,10 @@ export default function Information({ playlist }) {
 
   return (
     <Stack>
-      <Typography sx={textStyles.sermons.title}>
+      <Typography sx={{ ...textStyles.sermons.title, color: "white" }}>
         {playlist.title.split("|")[0].trim()}
       </Typography>
-      <Typography sx={textStyles.sermons.body}>
+      <Typography sx={{ ...textStyles.sermons.body, color: "#E1E5EA" }}>
         {`${playlist.videos.length} part series`}
       </Typography>
     </Stack>

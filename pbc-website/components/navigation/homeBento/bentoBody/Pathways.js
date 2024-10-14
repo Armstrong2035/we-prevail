@@ -1,6 +1,17 @@
-import { Grid2, Stack, Typography, Paper, Icon } from "@mui/material";
+import {
+  Grid2,
+  Stack,
+  Typography,
+  Paper,
+  Icon,
+  IconButton,
+} from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { textStyles } from "@/app/styles";
+import bible from "../../../../public/icons/bible.png";
+import handshake from "../../../../public/icons/handshake.png";
+import parentalControl from "../../../../public/icons/parental-control.png";
+import Image from "next/image";
 
 export default function Pathways() {
   // const pathways = [
@@ -10,9 +21,17 @@ export default function Pathways() {
   // ];
 
   const pathways = [
-    { title: "New Convert", color: "#F5E8D0" },
-    { title: "Christian but first time on PBC", color: "#D0E8F5" },
-    { title: "PBC, NSN, and HOWJ family", color: "#DFF5D0" },
+    { title: "New Convert", color: "#F5E8D0", icon: bible },
+    {
+      title: "Christian but first time on PBC",
+      color: "#D0E8F5",
+      icon: handshake,
+    },
+    {
+      title: "PBC, NSN, and HOWJ family",
+      color: "#DFF5D0",
+      icon: parentalControl,
+    },
   ];
 
   return (
@@ -32,12 +51,17 @@ export default function Pathways() {
               backgroundColor: pathway.color,
             }}
           >
-            <Typography sx={textStyles.secondaryBody}>
-              {pathway.title}
-            </Typography>
-            <Icon size="large">
-              <NavigateNextIcon />
-            </Icon>
+            <Stack direction="row" spacing={2} alignItems={"center"}>
+              <Image src={pathway.icon} width={24} height={24} responsive />
+              <Typography sx={textStyles.secondaryBody}>
+                {pathway.title}
+              </Typography>
+            </Stack>
+            <IconButton>
+              <Icon size="large">
+                <NavigateNextIcon />
+              </Icon>
+            </IconButton>
           </Paper>
         ))}
       </Stack>

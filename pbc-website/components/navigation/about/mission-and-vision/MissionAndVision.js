@@ -11,23 +11,11 @@ export default function MissionAndVision() {
     <div>
       {/* <LgAppBar /> */}
       <Container>
-        <Grid2 container direction={"row"} spacing={2}>
-          <Grid2 size={3}>
-            <RccgMissionAndVision />
-          </Grid2>
-
-          <Grid2 size={3}>
-            <PbcMission />
-          </Grid2>
-
-          <Grid2 size={3}>
-            <PbcVision />
-          </Grid2>
-
-          <Grid2 size={3}>
-            <PbcCoreValues />
-          </Grid2>
-        </Grid2>
+        <Stack>
+          <PbcMission />
+          <PbcVision />
+          <PbcCoreValues />
+        </Stack>
       </Container>
     </div>
   );

@@ -1,43 +1,89 @@
+"use client";
+import React, { useState } from "react";
 import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
   Container,
   Typography,
+  Card,
+  CardContent,
+  Button,
   Stack,
+  Grid2,
+  CardHeader,
 } from "@mui/material";
-import ArrowDropDownCircleRoundedIcon from "@mui/icons-material/ArrowDropDownCircleRounded";
-import MissionAndVision from "./mission-and-vision/MissionAndVision";
-import StatementOfFaith from "./statement-of-faith/StatementOfFaith";
-import OurPeople from "./our-people/OurPeople";
 import LgAppBar from "../LgAppBar";
+import Link from "next/link";
+import { buttonStyles, textStyles } from "@/app/styles";
+import CallMadeIcon from "@mui/icons-material/CallMade";
 
 export default function AboutPage() {
-  const aboutItems = [
+  const routes = [
     {
-      title: "Our Mission, Vision, and values",
-      component: <MissionAndVision />,
+      title: "Mission and Vision",
+      description: "Learn why we do the things we do the things we do",
+      url: "mission-and-vision",
     },
-    { title: "Statement of Faith", component: <StatementOfFaith /> },
-    { title: "Our People", component: <OurPeople /> },
+    {
+      title: "Statement of faith",
+      description: "Learn the doctrine we teach, and believe in",
+      url: "statement-of-faith",
+    },
+    {
+      title: "Our stewards",
+      description: "Meet the people whom God uses to keep PBC running",
+      url: "our-stewards",
+    },
   ];
+
+  console.log(routes);
+
   return (
-    <div>
+    <div style={{ backgroundColor: "#DFF5D0", height: "100vh" }}>
       <LgAppBar />
       <Container>
-        <Stack spacing={1}>
-          {aboutItems.map((item) => (
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ArrowDropDownCircleRoundedIcon />}
-                sx={{ height: "20vh" }}
+        <Grid2 container direction={"row"} spacing={3}>
+          {routes.map((route, index) => (
+            <Grid2 size={{ sm: 12, lg: 4 }}>
+              <Link
+                key={index}
+                href={`/about/${route.url}`}
+                style={{ textDecoration: "none" }}
               >
-                <Typography>{item.title}</Typography>
-              </AccordionSummary>
-              <AccordionDetails>{item.component}</AccordionDetails>
-            </Accordion>
+                <Card
+                  sx={{
+                    height: "40vh",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-start",
+                    alignItems: "center",
+                    backgroundColor: "#324A5F",
+                  }}
+                >
+                  <CardContent>
+                    <Typography sx={{ ...textStyles.cardHeading }}>
+                      {route.title}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        ...textStyles.tertiaryHeading,
+                        color: "#E1E5EA",
+                        mt: 3,
+                      }}
+                    >
+                      {route.description}
+                    </Typography>
+                    <Button
+                      sx={{ ...buttonStyles.textButton, mt: 3 }}
+                      variant={"text"}
+                      startIcon={<CallMadeIcon />}
+                    >
+                      Learn more
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Link>
+            </Grid2>
           ))}
-        </Stack>
+        </Grid2>
       </Container>
     </div>
   );

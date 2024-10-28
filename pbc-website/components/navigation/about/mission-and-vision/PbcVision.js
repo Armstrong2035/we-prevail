@@ -25,39 +25,19 @@ export default function PbcVision() {
 
   return (
     <Card>
-      <CardHeader
-        title={
-          <IconButton onClick={handleToggle}>
-            <Icon>
-              <AspectRatioRoundedIcon />
-            </Icon>
-          </IconButton>
-        }
-      />
+      <CardHeader title={<Typography>PBC's Mission</Typography>} />
 
       <CardContent>
-        <Typography>PBC's Mission</Typography>
-        <Dialog open={open} onOpenChange={setOpen}>
-          <DialogActions>
-            <IconButton onClick={handleToggle}>
-              <Icon>
-                <AspectRatioRoundedIcon />
-              </Icon>
-            </IconButton>
-          </DialogActions>
-          <DialogContent>
-            <Paper
-              elevation={2}
-              sx={{
-                p: 2,
-              }}
-            >
-              <Stack direction={"row"} spacing={1} alignItems={"center"}>
-                <Typography>{pbcVision}</Typography>
-              </Stack>
-            </Paper>
-          </DialogContent>
-        </Dialog>
+        <Paper
+          elevation={2}
+          sx={{
+            p: 2,
+          }}
+        >
+          <Stack direction={"row"} spacing={1} alignItems={"center"}>
+            <Typography>{pbcVision}</Typography>
+          </Stack>
+        </Paper>
       </CardContent>
     </Card>
   );

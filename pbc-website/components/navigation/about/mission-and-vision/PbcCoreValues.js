@@ -47,46 +47,26 @@ export default function PbcCoreValues() {
 
   return (
     <Card>
-      <CardHeader
-        title={
-          <IconButton onClick={handleToggle}>
-            <Icon>
-              <AspectRatioRoundedIcon />
-            </Icon>
-          </IconButton>
-        }
-      />
+      <CardHeader title={<Typography>Core values</Typography>} />
 
       <CardContent>
-        <Typography>Core values</Typography>
-        <Dialog open={open} onOpenChange={setOpen}>
-          <DialogActions>
-            <IconButton onClick={handleToggle}>
-              <Icon>
-                <AspectRatioRoundedIcon />
-              </Icon>
-            </IconButton>
-          </DialogActions>
-          <DialogContent>
-            <Stack spacing={3}>
-              {pbcCoreValues.map((item, index) => (
-                <Paper
-                  key={index}
-                  elevation={2}
-                  sx={{
-                    p: 2,
-                  }}
-                >
-                  <Stack direction={"row"} spacing={1} alignItems={"center"}>
-                    <Image height={24} width={24} src={item.icon} />
+        <Stack spacing={3}>
+          {pbcCoreValues.map((item, index) => (
+            <Paper
+              key={index}
+              elevation={2}
+              sx={{
+                p: 2,
+              }}
+            >
+              <Stack direction={"row"} spacing={1} alignItems={"center"}>
+                <Image height={24} width={24} src={item.icon} />
 
-                    <Typography>{item.title}</Typography>
-                  </Stack>
-                </Paper>
-              ))}
-            </Stack>
-          </DialogContent>
-        </Dialog>
+                <Typography>{item.title}</Typography>
+              </Stack>
+            </Paper>
+          ))}
+        </Stack>
       </CardContent>
     </Card>
   );

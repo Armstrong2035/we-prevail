@@ -1,4 +1,11 @@
-import { Paper, Typography, Chip, Stack, Grid2 } from "@mui/material";
+import {
+  Paper,
+  Typography,
+  Chip,
+  Stack,
+  Grid2,
+  Container,
+} from "@mui/material";
 
 export default function StatementOfFaith() {
   const statementOfFaith = [
@@ -109,7 +116,7 @@ export default function StatementOfFaith() {
   ];
 
   return (
-    <>
+    <Container>
       {statementOfFaith.map((item) => (
         <Paper
           elevation={2}
@@ -131,6 +138,6 @@ export default function StatementOfFaith() {
           </Grid2>
         </Paper>
       ))}
-    </>
+    </Container>
   );
 }

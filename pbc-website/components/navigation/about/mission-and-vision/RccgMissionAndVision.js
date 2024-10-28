@@ -11,6 +11,7 @@ import {
   Icon,
   Stack,
   DialogActions,
+  Box,
 } from "@mui/material";
 import AspectRatioRoundedIcon from "@mui/icons-material/AspectRatioRounded";
 
@@ -56,44 +57,30 @@ export default function RccgMissionAndVision() {
     <Card>
       <CardHeader
         title={
-          <IconButton onClick={handleToggle}>
-            <Icon>
-              <AspectRatioRoundedIcon />
-            </Icon>
-          </IconButton>
+          <Typography>
+            Mission and Vision of our parent church - the Redeemed Christian
+            Church of God
+          </Typography>
         }
       />
-
       <CardContent>
-        <Typography>RCCG</Typography>
-        <Dialog open={open} onOpenChange={setOpen}>
-          <DialogActions>
-            <IconButton onClick={handleToggle}>
-              <Icon>
-                <AspectRatioRoundedIcon />
-              </Icon>
-            </IconButton>
-          </DialogActions>
-          <DialogContent>
-            <Stack spacing={3}>
-              {rccgMissionAndVision.map((item, index) => (
-                <Paper
-                  key={index}
-                  elevation={2}
-                  sx={{
-                    p: 2,
-                  }}
-                >
-                  <Stack direction={"row"} spacing={1} alignItems={"center"}>
-                    <Image height={24} width={24} src={item.icon} />
+        <Stack spacing={1}>
+          {rccgMissionAndVision.map((item, index) => (
+            <Box
+              key={index}
+              // elevation={2}
+              sx={{
+                p: 2,
+              }}
+            >
+              <Stack direction={"row"} spacing={1} alignItems={"center"}>
+                <Image height={24} width={24} src={item.icon} />
 
-                    <Typography>{item.title}</Typography>
-                  </Stack>
-                </Paper>
-              ))}
-            </Stack>
-          </DialogContent>
-        </Dialog>
+                <Typography>{item.title}</Typography>
+              </Stack>
+            </Box>
+          ))}
+        </Stack>
       </CardContent>
     </Card>
   );

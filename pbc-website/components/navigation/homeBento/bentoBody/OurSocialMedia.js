@@ -14,37 +14,36 @@ import {
 import { buttonStyles, textStyles } from "@/app/styles";
 import Image from "next/image";
 
+const socialMediaPages = [
+  {
+    platform: "Instagram",
+    icon: instagram,
+    url: "https://www.instagram.com/pbcglobal/",
+  },
+
+  {
+    platform: "Youtube",
+    icon: youtube,
+    url: "https://www.youtube.com/c/PBCGLOBAL",
+  },
+  {
+    platform: "X fka Twitter",
+    icon: x,
+    url: "https://x.com/pbc_global",
+  },
+  {
+    platform: "Tiktok",
+    icon: tiktok,
+    url: "https://www.tiktok.com/@pbcglobalchurch?_t=8aJpzh8a44w&_r=1",
+  },
+
+  {
+    platform: "Spotify",
+    icon: spotify,
+    url: "https://open.spotify.com/artist/1IUpGDV4zUfwFbq6SO6Uy0?si=dpSWQJGzRlWOE7JHpTZzhw&nd=1&dlsi=9ff4f1b7103346ff",
+  },
+];
 export default function OurSocialMedia() {
-  const socialMediaPages = [
-    {
-      platform: "Instagram",
-      icon: instagram,
-      url: "https://www.instagram.com/pbcglobal/",
-    },
-
-    {
-      platform: "Youtube",
-      icon: youtube,
-      url: "https://www.youtube.com/c/PBCGLOBAL",
-    },
-    {
-      platform: "X fka Twitter",
-      icon: x,
-      url: "https://x.com/pbc_global",
-    },
-    {
-      platform: "Tiktok",
-      icon: tiktok,
-      url: "https://www.tiktok.com/@pbcglobalchurch?_t=8aJpzh8a44w&_r=1",
-    },
-
-    {
-      platform: "Spotify",
-      icon: spotify,
-      url: "https://open.spotify.com/artist/1IUpGDV4zUfwFbq6SO6Uy0?si=dpSWQJGzRlWOE7JHpTZzhw&nd=1&dlsi=9ff4f1b7103346ff",
-    },
-  ];
-
   return (
     <Card sx={{ width: "100%", backgroundColor: "#324A5F" }}>
       <CardHeader
@@ -71,3 +70,5 @@ export default function OurSocialMedia() {
     </Card>
   );
 }
+
+export { socialMediaPages };

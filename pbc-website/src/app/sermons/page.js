@@ -1,16 +1,15 @@
+import { Container } from "@mui/material";
+import SermonList from "../../../components/navigation/semons/sermonList";
+import { loadedPlaylists } from "../page";
+import Footer from "../../../components/footer/Footer";
 
-import { Container } from "@mui/material"
-import SermonList from "../../../components/navigation/semons/sermonList"
-import { loadedPlaylists } from "../page"
+export default async function page() {
+  console.log(loadedPlaylists);
 
-
-export default async function page(){
-
-    console.log(loadedPlaylists)
-
-    return (
-        <div>
-            <SermonList loadedPlaylists={loadedPlaylists}/>
-        </div>
-    )
+  return (
+    <div>
+      <SermonList loadedPlaylists={loadedPlaylists} />
+      <Footer />
+    </div>
+  );
 }

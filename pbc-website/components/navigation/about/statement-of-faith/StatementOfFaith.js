@@ -6,6 +6,8 @@ import {
   Grid2,
   Container,
 } from "@mui/material";
+import LgAppBar from "../../LgAppBar";
+import { textStyles } from "@/app/styles";
 
 export default function StatementOfFaith() {
   const statementOfFaith = [
@@ -27,15 +29,15 @@ export default function StatementOfFaith() {
         "Isaiah 30:18",
         "Luke 6:36",
       ],
+      color: "#F5E8D0",
     },
-
     {
       title: "The Father",
       description:
         "We believe in God the Father, from whom all things come, having life in Himself and giving life to all living things",
       scriptures: ["John 5:26", "1st Corinthians 8:6", "Ephesians 1:3"],
+      color: "#D0E8F5",
     },
-
     {
       title: "Jesus",
       description:
@@ -50,8 +52,8 @@ export default function StatementOfFaith() {
         "Acts 1:9-11",
         "Hebrews 1:3",
       ],
+      color: "#DFF5D0",
     },
-
     {
       title: "The Holy Spirit",
       description:
@@ -64,8 +66,8 @@ export default function StatementOfFaith() {
         "Acts 1:8",
         "Romans 8:9",
       ],
+      color: "#F1FAEE",
     },
-
     {
       title: "The Bible",
       description:
@@ -76,12 +78,14 @@ export default function StatementOfFaith() {
         "John 20:31",
         "Psalm 119:105",
       ],
+      color: "#F5E8D0",
     },
     {
       title: "Mankind",
       description:
         "We believe that mankind was created in the image of God, but sinned by disobedience, becoming guilty before God and depraved in all areas of life, thereby incurring physical and spiritual death.",
       scriptures: ["Genesis 1:26-27", "Romans 3:10-23", "Romans 6:23"],
+      color: "#D0E8F5",
     },
     {
       title: "Satan",
@@ -93,6 +97,7 @@ export default function StatementOfFaith() {
         "1 Peter 5:8",
         "Revelation 20:10",
       ],
+      color: "#DFF5D0",
     },
     {
       title: "Salvation",
@@ -106,38 +111,63 @@ export default function StatementOfFaith() {
         "Romans 8:29",
         "2 Peter 3:9",
       ],
+      color: "#F1FAEE",
     },
     {
       title: "Missions / The Great Commission / Social Justice",
       description:
         "We believe that “missions” is the process of planting churches / supporting church planting amongst the peoples of the world and that it is our responsibility to promote and participate in active evangelism, discipling and the establishing of new churches, both locally and internationally. Furthermore, we believe that the church has a crucial role to play in bringing social upliftment and change within communities through the transformational work of the gospel in the hearts and minds of those communities",
       scriptures: ["Matthew 28:19", "Acts 1:8", "Isaiah 61:1", "Psalm 89:14"],
+      color: "#F5E8D0",
     },
   ];
 
   return (
-    <Container>
-      {statementOfFaith.map((item) => (
-        <Paper
-          elevation={2}
-          sx={{
-            p: 2,
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-          }}
+    <div style={{ backgroundColor: "#DFF5D0" }}>
+      <LgAppBar />
+      <Container maxWidth="md" sx={{ py: 4 }}>
+        <Typography
+          sx={{ ...textStyles.cardHeading, color: "black" }}
+          align="left"
+          gutterBottom
         >
-          <Typography>{item.title}</Typography>
-          <Typography>{item.description}</Typography>
-          <Grid2 container spacing={1} direction={"row"}>
-            {item.scriptures.map((scripture) => (
-              <Grid2 item size={2}>
-                <Chip label={scripture} />
-              </Grid2>
-            ))}
-          </Grid2>
-        </Paper>
-      ))}
-    </Container>
+          Statement of Faith
+        </Typography>
+        {statementOfFaith.map((item, index) => (
+          <Paper
+            key={index}
+            elevation={3}
+            sx={{
+              p: 3,
+              mb: 3,
+              borderRadius: 2,
+              bgcolor: "#324A5F",
+            }}
+          >
+            <Typography
+              sx={{ ...textStyles.secondaryBody, color: "#FFFFFF" }}
+              gutterBottom
+            >
+              {item.title}
+            </Typography>
+            <Typography
+              sx={{ ...textStyles.tertiaryHeading, mb: 2, color: "#E1E5EA" }}
+            >
+              {item.description}
+            </Typography>
+            <Stack direction="row" spacing={1} flexWrap="wrap">
+              {item.scriptures.map((scripture, idx) => (
+                <Chip
+                  key={idx}
+                  label={scripture}
+                  variant="outlined"
+                  sx={{ color: "#E1E5EA" }}
+                />
+              ))}
+            </Stack>
+          </Paper>
+        ))}
+      </Container>
+    </div>
   );
 }

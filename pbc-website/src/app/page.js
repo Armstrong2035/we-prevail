@@ -2,6 +2,7 @@ import HomeBento from "../../components/navigation/homeBento/HomeBento";
 import { collectPlaylistItems, collectPlaylists } from "./youtube";
 import playlists from "../../utils/playlists";
 import { PlaylistsContext } from "../../utils/context";
+import Footer from "../../components/footer/Footer";
 
 export default async function Home() {
   async function getPlaylistAndVideos() {
@@ -49,6 +50,7 @@ export default async function Home() {
   return (
     <div style={{}}>
       <HomeBento loadedPlaylists={loadedPlaylists} />
+      <Footer />
     </div>
   );
 }

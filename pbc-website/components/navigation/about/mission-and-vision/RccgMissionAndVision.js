@@ -1,35 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Card,
   CardContent,
   CardHeader,
-  Dialog,
-  IconButton,
   Typography,
-  DialogContent,
   Paper,
-  Icon,
-  Stack,
-  DialogActions,
   Box,
+  Stack,
 } from "@mui/material";
-import AspectRatioRoundedIcon from "@mui/icons-material/AspectRatioRounded";
-
+import Image from "next/image";
 import heaven from "../../../../public/icons/heaven.png";
 import community from "../../../../public/icons/community.png";
 import globe from "../../../../public/icons/globe.png";
 import church from "../../../../public/icons/church.png";
 import shield from "../../../../public/icons/shield.png";
 import missions from "../../../../public/icons/missions.png";
-import Image from "next/image";
 
 export default function RccgMissionAndVision() {
-  const [open, setOpen] = useState(false);
-
-  const handleToggle = () => {
-    setOpen(!open);
-  };
-
   const rccgMissionAndVision = [
     { title: "To make heaven.", icon: heaven },
     { title: "To take as many people with us.", icon: community },
@@ -54,31 +41,46 @@ export default function RccgMissionAndVision() {
   ];
 
   return (
-    <Card>
+    <Card elevation={3} sx={{ maxWidth: 800, mx: "auto", my: 4 }}>
       <CardHeader
         title={
-          <Typography>
-            Mission and Vision of our parent church - the Redeemed Christian
+          <Typography variant="h6" fontWeight="bold" textAlign="center">
+            Mission and Vision of Our Parent Church - The Redeemed Christian
             Church of God
           </Typography>
         }
       />
       <CardContent>
-        <Stack spacing={1}>
+        <Stack spacing={2}>
           {rccgMissionAndVision.map((item, index) => (
-            <Box
+            <Paper
               key={index}
-              // elevation={2}
+              elevation={1}
               sx={{
                 p: 2,
+                display: "flex",
+                alignItems: "center",
+                gap: 2,
+                borderRadius: 2,
+                backgroundColor: "background.default",
+                "&:hover": {
+                  boxShadow: 3,
+                },
               }}
             >
-              <Stack direction={"row"} spacing={1} alignItems={"center"}>
-                <Image height={24} width={24} src={item.icon} />
-
-                <Typography>{item.title}</Typography>
-              </Stack>
-            </Box>
+              <Box sx={{ minWidth: 36 }}>
+                <Image
+                  src={item.icon}
+                  alt={item.title}
+                  width={36}
+                  height={36}
+                  style={{ borderRadius: "50%" }}
+                />
+              </Box>
+              <Typography variant="body1" color="text.primary">
+                {item.title}
+              </Typography>
+            </Paper>
           ))}
         </Stack>
       </CardContent>

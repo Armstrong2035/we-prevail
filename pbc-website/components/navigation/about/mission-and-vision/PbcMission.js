@@ -26,17 +26,9 @@ export default function PbcMission() {
   return (
     <Card>
       <CardHeader title={<Typography>PBC's Mission</Typography>} />
-
       <CardContent>
-        <Paper
-          elevation={2}
-          sx={{
-            p: 2,
-          }}
-        >
-          <Stack direction={"row"} spacing={1} alignItems={"center"}>
-            <Typography>{pbcMission}</Typography>
-          </Stack>
+        <Paper elevation={2} sx={{ p: 2 }}>
+          <Typography>{pbcMission}</Typography>
         </Paper>
       </CardContent>
     </Card>

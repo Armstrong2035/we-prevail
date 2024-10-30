@@ -9,7 +9,7 @@ import {
   Stack,
 } from "@mui/material";
 import { colors, textStyles } from "@/app/styles";
-import HomeIcon from "@mui/icons-material/Home";
+import HomeIcon from "@mui/icons-material/Home.js";
 import Link from "next/link";
 
 export default function LgAppBar() {

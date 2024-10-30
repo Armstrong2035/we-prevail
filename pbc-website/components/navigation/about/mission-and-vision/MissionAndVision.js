@@ -20,7 +20,6 @@ import globe from "../../../../public/icons/globe.png";
 import church from "../../../../public/icons/church.png";
 import missions from "../../../../public/icons/missions.png";
 import { textStyles } from "@/app/styles";
-import BackToAbout from "../backToAbout";
 
 // Unified Component
 export default function PbcMissionAndVision() {
@@ -73,7 +72,6 @@ export default function PbcMissionAndVision() {
               <Typography sx={{ ...textStyles.cardHeading, color: "black" }}>
                 PBC Mission, Vision, and Core Values
               </Typography>
-              {/* <BackToAbout /> */}
             </Stack>
           }
         />

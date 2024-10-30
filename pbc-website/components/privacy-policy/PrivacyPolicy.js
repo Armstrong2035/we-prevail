@@ -130,7 +130,7 @@ export default function PrivacyPolicy() {
             {item.list && (
               <ul style={{ color: "#E1E5EA" }}>
                 {item.list.map((item, idx) => (
-                  <li>
+                  <li key={idx}>
                     <Typography
                       sx={{
                         ...textStyles.tertiaryHeading,

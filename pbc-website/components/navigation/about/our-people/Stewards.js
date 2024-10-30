@@ -15,9 +15,9 @@ export default function Stewards({ pbcStewards }) {
     <Box>
       {/* <Grid2 container direction={"row"} spacing={3}> */}
       <Masonry columns={{ sm: 2, lg: 4 }} spacing={2}>
-        {pbcStewards.map((steward) => (
+        {pbcStewards.map((steward, index) => (
           //   <Grid2 size={{ sm: 6, md: 4, lg: 3 }}>
-          <Card sx={{ backgroundColor: "#F1FAEE" }}>
+          <Card sx={{ backgroundColor: "#F1FAEE" }} key={index}>
             <CardContent>
               <Image
                 height={100}

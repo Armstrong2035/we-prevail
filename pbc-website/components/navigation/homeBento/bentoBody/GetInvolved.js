@@ -34,12 +34,13 @@ export default function GetInvolved() {
       />
 
       <CardContent sx={{ backgroundColor: "#324A5F" }}>
-        {waysToGetInvolved.map((i) => (
+        {waysToGetInvolved.map((i, index) => (
           <Button
             size={"large"}
             variant={"text"}
             fullWidth
             sx={{ ...buttonStyles.textButton, color: "#E1E5EA" }}
+            key={index}
           >
             {i}
           </Button>

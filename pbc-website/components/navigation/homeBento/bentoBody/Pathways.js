@@ -41,7 +41,7 @@ export default function Pathways() {
       </Typography>
 
       <Stack spacing={2}>
-        {pathways.map((pathway) => (
+        {pathways.map((pathway, index) => (
           <Paper
             elevation={2}
             sx={{
@@ -50,6 +50,7 @@ export default function Pathways() {
               justifyContent: "space-between",
               backgroundColor: pathway.color,
             }}
+            key={index}
           >
             <Stack direction="row" spacing={2} alignItems={"center"}>
               <Image src={pathway.icon} width={24} height={24} responsive />

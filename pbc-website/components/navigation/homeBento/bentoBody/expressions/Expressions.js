@@ -51,8 +51,8 @@ export default function Expressions() {
       }}
     >
       <Typography sx={textStyles.secondaryHeading}>PBC Expressions</Typography>
-      {expressions.map((expression) => (
-        <ExpressionCard expression={expression} />
+      {expressions.map((expression, index) => (
+        <ExpressionCard expression={expression} key={index} />
       ))}
     </Box>
   );

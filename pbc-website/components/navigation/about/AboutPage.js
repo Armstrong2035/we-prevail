@@ -42,9 +42,8 @@ export default function AboutPage() {
       <Container>
         <Grid2 container direction={"row"} spacing={3}>
           {routes.map((route, index) => (
-            <Grid2 size={{ sm: 12, lg: 4 }}>
+            <Grid2 size={{ sm: 12, lg: 4 }} key={index}>
               <Link
-                key={index}
                 href={`/about/${route.url}`}
                 style={{ textDecoration: "none" }}
               >

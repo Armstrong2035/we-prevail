@@ -92,8 +92,8 @@ export default function Footer() {
             Connect With Us
           </Typography>
           <Box sx={{ display: "flex", gap: 3 }}>
-            {socialMediaPages.map((social) => (
-              <Link href={`${social.url}`}>
+            {socialMediaPages.map((social, index) => (
+              <Link href={`${social.url}`} key={index}>
                 <Image
                   key={social.platform}
                   component="a"

@@ -25,8 +25,8 @@ export default function ExternalWallets({ wallets }) {
         </Box>
 
         <Grid2 container direction={"row"} spacing={4}>
-          {wallets.map((wallet) => (
-            <Grid2 size={{ lg: 4, sm: 12 }}>
+          {wallets.map((wallet, index) => (
+            <Grid2 size={{ lg: 4, sm: 12 }} key={index}>
               <Link href={""} style={{ textDecoration: "none" }}>
                 <Card sx={{ p: 3 }}>
                   <Box

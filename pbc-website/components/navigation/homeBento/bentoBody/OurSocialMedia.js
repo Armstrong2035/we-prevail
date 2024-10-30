@@ -55,10 +55,11 @@ export default function OurSocialMedia() {
       />
       <CardContent>
         <Stack spacing={2}>
-          {socialMediaPages.map((i) => (
+          {socialMediaPages.map((i, index) => (
             <Button
               variant="text"
               fullWidth
+              key={index}
               sx={{ ...buttonStyles.textButton, ml: 2, color: "#E1E5EA" }}
               startIcon={<Image src={i.icon} width={24} height={24} />}
             >

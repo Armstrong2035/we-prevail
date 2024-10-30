@@ -27,8 +27,8 @@ export default function IntegratedCheckoutOptions({ linkedOptions }) {
         </Box>
 
         <Grid2 container direction={"row"} spacing={4}>
-          {linkedOptions.map((option) => (
-            <Grid2 size={{ lg: 6, sm: 12 }}>
+          {linkedOptions.map((option, index) => (
+            <Grid2 size={{ lg: 6, sm: 12 }} key={index}>
               <Link href={""}>
                 <Card sx={{ p: 3 }}>
                   <Box

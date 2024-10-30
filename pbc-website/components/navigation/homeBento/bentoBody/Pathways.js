@@ -45,7 +45,11 @@ export default function Pathways() {
 
       <Stack spacing={2}>
         {pathways.map((pathway, index) => (
-          <Link href={pathway.url} style={{ textDecoration: "none" }}>
+          <Link
+            href={pathway.url}
+            style={{ textDecoration: "none" }}
+            key={index}
+          >
             <Paper
               elevation={2}
               sx={{
@@ -54,7 +58,6 @@ export default function Pathways() {
                 justifyContent: "space-between",
                 backgroundColor: pathway.color,
               }}
-              key={index}
             >
               <Stack direction="row" spacing={2} alignItems={"center"}>
                 <Image src={pathway.icon} width={24} height={24} responsive />

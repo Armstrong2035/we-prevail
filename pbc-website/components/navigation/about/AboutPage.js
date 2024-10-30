@@ -37,7 +37,7 @@ export default function AboutPage() {
   console.log(routes);
 
   return (
-    <div style={{ backgroundColor: "#DFF5D0", height: "100vh" }}>
+    <div style={{ backgroundColor: "#DFF5D0", height: "100%" }}>
       <LgAppBar />
       <Container>
         <Grid2 container direction={"row"} spacing={3}>

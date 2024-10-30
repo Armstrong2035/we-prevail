@@ -29,7 +29,13 @@ export default function Footer() {
         mt: 5,
       }}
     >
-      <Grid2 container sx={{ width: "100%", mt: 5 }}>
+      <Grid2
+        container
+        sx={{ width: "100%", mt: 5 }}
+        alignItems={"center"}
+        justifyContent={"center"}
+        spacing={5}
+      >
         {/* Contact Information */}
         <Grid2
           size={{ sm: 2, md: 4 }}
@@ -99,6 +105,8 @@ export default function Footer() {
                   component="a"
                   src={social.icon}
                   target="_blank"
+                  height={24}
+                  width={24}
                 />
               </Link>
             ))}

@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 import LgAppBar from "../LgAppBar";
 import Announcement from "./Announcement";
 import BentoBody from "./bentoBody/BentoBody";
-import { useStore } from "../../../utils/store";
 import LatestSermon from "./bentoBody/latestSermon/LatestSermon";
 
 export default function HomeBento({ loadedPlaylists }) {

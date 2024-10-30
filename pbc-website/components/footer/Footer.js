@@ -38,7 +38,7 @@ export default function Footer() {
       >
         {/* Contact Information */}
         <Grid2
-          size={{ sm: 2, md: 4 }}
+          size={{ sm: 12, md: 4 }}
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -85,7 +85,7 @@ export default function Footer() {
 
         {/* Social Media Links */}
         <Grid2
-          size={{ sm: 2, md: 4 }}
+          size={{ sm: 12, md: 4 }}
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -115,7 +115,7 @@ export default function Footer() {
 
         {/* Legal Links */}
         <Grid2
-          size={{ sm: 2, md: 4 }}
+          size={{ sm: 12, md: 4 }}
           sx={{
             display: "flex",
             flexDirection: "column",

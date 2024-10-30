@@ -1,57 +1,43 @@
 "use client";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  Container,
-  Grid2,
-  IconButton,
-  Typography,
-  Stack,
-  Box,
-} from "@mui/material";
-
+import { Card, CardContent, Container, Grid, Stack, Box } from "@mui/material";
 import Image from "next/image";
-import LatestSermon from "../homeBento/bentoBody/latestSermon/LatestSermon";
 import Information from "./information";
-import Controls from "./controls";
-import { textStyles } from "@/app/styles";
 import LgAppBar from "../LgAppBar";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function SermonList() {
-  const playlists = localStorage.getItem("loadedPlaylists");
-  const loadedPlaylists = JSON.parse(playlists);
-  //console.log(loadedPlaylists);
+  const [loadedPlaylists, setLoadedPlaylists] = useState([]);
 
-  let latestSermon =
+  useEffect(() => {
+    const playlists = localStorage.getItem("loadedPlaylists");
+    if (playlists) {
+      setLoadedPlaylists(JSON.parse(playlists));
+    }
+  }, []);
+
+  if (!loadedPlaylists.length) {
+    return <p>Loading...</p>; // or any fallback UI while playlists load
+  }
+
+  const latestSermon =
     loadedPlaylists[0].videos[loadedPlaylists[0].videos.length - 1];
 
-  //console.log(latestSermon);
-
   const buttons = false;
-  //#F9F7D9
-  //#324A5F
-  //#DFF5D0
 
   return (
     <div style={{ backgroundColor: "#DFF5D0" }}>
       <LgAppBar />
-
       <Container>
         <Stack spacing={5}>
-          {/* <LatestSermon loadedPlaylists={loadedPlaylists} buttons={buttons} /> */}
-          <Grid2
+          <Grid
             container
-            direction={"row"}
             spacing={3}
             sx={{ width: "100%" }}
             justifyContent={"center"}
           >
             {loadedPlaylists.map((playlist) => (
-              <Grid2 item size={{ lg: 3, md: 4, sm: 6 }} key={playlist.id}>
-                {" "}
-                {/* {{ edit_2: Added key prop for list items }} */}
+              <Grid item lg={3} md={4} sm={6} key={playlist.id}>
                 <Link
                   href={`/sermons/${playlist.title.toLowerCase()}`}
                   style={{ textDecoration: "none" }}
@@ -70,14 +56,13 @@ export default function SermonList() {
                           height={300}
                         />
                       </Box>
-                      {/* <Controls playlist={playlist} /> */}
                       <Information playlist={playlist} />
                     </CardContent>
                   </Card>
                 </Link>
-              </Grid2>
+              </Grid>
             ))}
-          </Grid2>
+          </Grid>
         </Stack>
       </Container>
     </div>

@@ -128,7 +128,7 @@ export default function Footer() {
               Terms of Use
             </Link>
             <Link
-              href="/privacy"
+              href="/privacy-policy"
               color="inherit"
               underline="hover"
               style={{ ...textStyles.sermons.body, color: "black" }}

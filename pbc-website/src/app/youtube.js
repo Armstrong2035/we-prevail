@@ -60,5 +60,21 @@ const collectPlaylistItems = async (playlistId) => {
   return items;
 };
 
-export { collectPlaylists, collectPlaylistItems };
+const collectLatestService = async () => {
+  try {
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${`Worship experience at PBC`}&channelId=${channelId}&order=date&key=${apiKey}`;
+    const response = await fetch(url);
 
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(`Collecting latest service failed because ${error}`);
+    throw error;
+  }
+};
+
+export { collectPlaylists, collectPlaylistItems, collectLatestService };

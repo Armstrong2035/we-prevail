@@ -10,11 +10,17 @@ export default function Sermon({ slug }) {
 
   useEffect(() => {
     const playlist = localStorage.getItem("loadedPlaylists");
-    const playlists = JSON.parse(playlist);
+    let playlists = [];
 
-    if (playlists) {
+    try {
+      playlists = JSON.parse(playlist) || [];
+    } catch (error) {
+      console.error("Error parsing loadedPlaylists from localStorage:", error);
+    }
+
+    if (playlists.length > 0) {
       const thisSermon = playlists.find(
-        (playlist) => playlist.title.toLowerCase() === slug
+        (playlist) => playlist.title.toLowerCase() === slug.toLowerCase()
       );
 
       if (thisSermon) {

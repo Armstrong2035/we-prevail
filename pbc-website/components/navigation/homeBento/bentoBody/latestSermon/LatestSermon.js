@@ -8,11 +8,7 @@ export default function LatestSermon({ loadedPlaylists, buttons }) {
 
   return (
     <>
-      {isDesktop ? (
-        <LgLatestSermon loadedPlaylists={loadedPlaylists} buttons={buttons} />
-      ) : (
-        <SmLatestSermon loadedPlaylists={loadedPlaylists} buttons={buttons} />
-      )}
+      <LgLatestSermon loadedPlaylists={loadedPlaylists} />
     </>
   );
 }

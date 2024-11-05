@@ -5,16 +5,20 @@ import LgAppBar from "../LgAppBar";
 import Announcement from "./Announcement";
 import BentoBody from "./bentoBody/BentoBody";
 import LatestSermon from "./bentoBody/latestSermon/LatestSermon";
+import LatestService from "./bentoBody/latestService/LatestService";
 
-export default function HomeBento({ loadedPlaylists }) {
+export default function HomeBento({ latestService }) {
   // const theme = useTheme();
   // const desktop = useMediaQuery(theme.breakpoints.up("lg"));
 
-  useEffect(() => {
-    localStorage.setItem("loadedPlaylists", JSON.stringify(loadedPlaylists));
-  }, [loadedPlaylists]);
+  //console.log(latestService);
 
-  const buttons = true;
+  // useEffect(() => {
+  //   localStorage.setItem("loadedPlaylists", JSON.stringify(loadedPlaylists));
+  //   localStorage.setItem("latestService", JSON.stringify(latestService));
+  // }, [loadedPlaylists, latestService]);
+
+  //const buttons = true;
 
   // const setPlaylists = useStore((state) => state.setPlaylists)
   // setPlaylists(playlists)
@@ -22,13 +26,11 @@ export default function HomeBento({ loadedPlaylists }) {
   // console.log(playlists)
 
   return (
-    <div style={{ backgroundColor: "" }}>
-      {/* {desktop ? <LgAppBar /> : <SmAppBar />} */}
-
+    <div style={{ backgroundColor: "#DFF5D0", height: "100%" }}>
       <LgAppBar />
       <Container>
         <Announcement />
-        <LatestSermon loadedPlaylists={loadedPlaylists} buttons={buttons} />
+        <LatestService latestService={latestService} />
         <BentoBody />
       </Container>
     </div>

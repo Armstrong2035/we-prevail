@@ -34,7 +34,7 @@ export default function Footer() {
         sx={{ width: "100%", mt: 5 }}
         alignItems={"center"}
         justifyContent={"center"}
-        spacing={5}
+        spacing={2}
       >
         {/* Contact Information */}
         <Grid2

@@ -1,43 +1,68 @@
 "use client";
-import { Card, CardContent, Container, Grid, Stack, Box } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Container,
+  Grid,
+  Stack,
+  Box,
+  Grid2,
+} from "@mui/material";
 import Image from "next/image";
 import Information from "./information";
 import LgAppBar from "../LgAppBar";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import LatestSermon from "../homeBento/bentoBody/latestSermon/LatestSermon";
 
-export default function SermonList() {
-  const [loadedPlaylists, setLoadedPlaylists] = useState([]);
+export default function SermonList({ loadedPlaylists }) {
+  // const [loadedPlaylists, setLoadedPlaylists] = useState([]);
 
   useEffect(() => {
-    const playlists = localStorage.getItem("loadedPlaylists");
-    if (playlists) {
-      setLoadedPlaylists(JSON.parse(playlists));
-    }
-  }, []);
+    localStorage.setItem("loadedPlaylists", JSON.stringify(loadedPlaylists));
+  }, [loadedPlaylists]);
 
-  if (!loadedPlaylists.length) {
-    return <p>Loading...</p>; // or any fallback UI while playlists load
-  }
+  // // console.log(loadedPlaylists);
 
-  const latestSermon =
-    loadedPlaylists[0].videos[loadedPlaylists[0].videos.length - 1];
+  // useEffect(() => {
+  //   const playlists = localStorage.getItem("loadedPlaylists");
+  //   console.log(playlists);
+  //   if (playlists) {
+  //     setLoadedPlaylists(JSON.parse(playlists));
+  //   }
+  // }, []);
+
+  // if (!loadedPlaylists.length) {
+  //   return <p>Loading...</p>; // or any fallback UI while playlists load
+  // }
+
+  // const latestSermon =
+  //   loadedPlaylists[0].videos[loadedPlaylists[0].videos.length - 1];
 
   const buttons = false;
 
   return (
     <div style={{ backgroundColor: "#DFF5D0" }}>
       <LgAppBar />
-      <Container>
+      <Container
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          gap: 5,
+        }}
+      >
+        <LatestSermon loadedPlaylists={loadedPlaylists} buttons={buttons} />
         <Stack spacing={5}>
-          <Grid
+          <Grid2
             container
             spacing={3}
-            sx={{ width: "100%" }}
+            alignItems={"center"}
             justifyContent={"center"}
           >
             {loadedPlaylists.map((playlist) => (
-              <Grid item lg={3} md={4} sm={6} key={playlist.id}>
+              <Grid2 item size={{ lg: 4, sm: 12 }} key={playlist.id}>
                 <Link
                   href={`/sermons/${playlist.title.toLowerCase()}`}
                   style={{ textDecoration: "none" }}
@@ -60,9 +85,9 @@ export default function SermonList() {
                     </CardContent>
                   </Card>
                 </Link>
-              </Grid>
+              </Grid2>
             ))}
-          </Grid>
+          </Grid2>
         </Stack>
       </Container>
     </div>

@@ -13,7 +13,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import Link from "next/link";
 
 export default function LgAppBar() {
-  const navItems = ["Sermons", "About", "Online", "Giving", "Salvation"];
+  const navItems = ["Sermons", "About", "Giving", "Salvation"];
 
   // const theme = useTheme();
   // const isDesktop = useMediaQuery(theme.breakpoints.up("lg"));

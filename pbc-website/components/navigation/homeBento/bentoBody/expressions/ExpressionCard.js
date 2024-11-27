@@ -31,7 +31,7 @@ export default function ExpressionCard({ expression }) {
             justifyContent={"space-between"}
             direction={"row"}
           >
-            <Typography sx={textStyles.secondaryBody}>
+            <Typography sx={{ ...textStyles.secondaryBody, fontSize: "18px" }}>
               {expression.title}
             </Typography>
             <IconButton onClick={handleFlip}>

@@ -50,7 +50,9 @@ export default function Expressions() {
         gap: 2,
       }}
     >
-      <Typography sx={textStyles.secondaryHeading}>PBC Expressions</Typography>
+      <Typography sx={{ ...textStyles.secondaryHeading, fontSize: "18px" }}>
+        PBC Expressions
+      </Typography>
       {expressions.map((expression, index) => (
         <ExpressionCard expression={expression} key={index} />
       ))}

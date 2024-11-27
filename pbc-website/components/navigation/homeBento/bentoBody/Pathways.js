@@ -38,8 +38,8 @@ export default function Pathways() {
   ];
 
   return (
-    <Stack spacing={3}>
-      <Typography sx={textStyles.secondaryHeading}>
+    <Stack spacing={1}>
+      <Typography sx={{ ...textStyles.secondaryHeading, fontSize: "18px" }}>
         Tailor your PBC experience.
       </Typography>
 
@@ -61,7 +61,9 @@ export default function Pathways() {
             >
               <Stack direction="row" spacing={2} alignItems={"center"}>
                 <Image src={pathway.icon} width={24} height={24} responsive />
-                <Typography sx={textStyles.secondaryBody}>
+                <Typography
+                  sx={{ ...textStyles.secondaryBody, fontSize: "14px" }}
+                >
                   {pathway.title}
                 </Typography>
               </Stack>
